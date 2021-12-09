@@ -24,7 +24,7 @@ class _TabsScreenState extends State<TabsScreen> {
     _pages = [
       {
         'page': const CategoriesScreen(),
-        'title': 'Categories',
+        'title': 'Cuisines',
       },
       {
         'page': FavoritesScreen(widget.favoriteMeals),
@@ -60,7 +60,7 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon:const  Icon(Icons.category),
-            label: 'Categories',
+            label: 'Cuisines',
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
