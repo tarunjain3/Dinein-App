@@ -1,3 +1,4 @@
+import 'package:contactless_dinein/screens/order_confirmation.dart';
 import 'package:flutter/material.dart';
 
 import './dummy_data.dart';
@@ -99,6 +100,7 @@ class _MyAppState extends State<MyApp> {
             CategoryMealsScreen(_availableMeals),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
         FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
+         OrderConfirmationScreen.routeName: (ctx) => const OrderConfirmationScreen(),
       },
       onGenerateRoute: (settings) {
         // print(settings.arguments);
