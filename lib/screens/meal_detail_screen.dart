@@ -76,7 +76,7 @@ class MealDetailScreen extends StatelessWidget {
                       children: [
                         ListTile(
                           leading: CircleAvatar(
-                            child: Text('# ${(index + 1)}'),
+                            child: Text('${(index + 1)}'),
                           ),
                           title: Text(
                             selectedMeal.steps[index],
@@ -93,7 +93,7 @@ class MealDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-           isFavorite(mealId) ? Icons.star : Icons.star_border,
+           isFavorite(mealId) ? Icons.shopping_cart_rounded: Icons.shopping_cart_outlined,
         ),
         onPressed: () => toggleFavorite(mealId),
       ),
