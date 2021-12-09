@@ -20,7 +20,7 @@ class MealDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget buildContainer(Widget child) {
+  Widget buildContainer(BuildContext context , Widget child) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -29,8 +29,8 @@ class MealDetailScreen extends StatelessWidget {
       ),
       margin: const EdgeInsets.all(10),
       padding: const EdgeInsets.all(10),
-      height: 150,
-      width: 300,
+      height: MediaQuery.of(context).size.height * 0.4,
+      // width: 300,
       child: child,
     );
   }
@@ -56,21 +56,29 @@ class MealDetailScreen extends StatelessWidget {
             ),
             buildSectionTitle(context, 'Ingredients'),
             buildContainer(
-              ListView.builder(
-                itemBuilder: (ctx, index) => Card(
-                      color: Theme.of(context).colorScheme.secondary,
-                      child: Padding(
-                          padding:const EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 10,
-                          ),
-                          child: Text(selectedMeal.ingredients[index])),
-                    ),
-                itemCount: selectedMeal.ingredients.length,
+              context,
+              Container(
+                padding: const EdgeInsets.all(10),
+                 decoration: BoxDecoration(
+                 color: Colors.grey[200],
+                   borderRadius: BorderRadius.circular(10),
+                 ),
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) => Card(
+                        child: Padding(
+                            padding:const EdgeInsets.symmetric(
+                              vertical: 8,
+                              horizontal: 10,
+                            ),
+                            child: Text(selectedMeal.ingredients[index])),
+                      ),
+                  itemCount: selectedMeal.ingredients.length,
+                ),
               ),
             ),
             buildSectionTitle(context, 'Steps'),
             buildContainer(
+              context,
               ListView.builder(
                 itemBuilder: (ctx, index) => Column(
                       children: [
